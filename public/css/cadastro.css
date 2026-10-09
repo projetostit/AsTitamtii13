@@ -208,3 +208,54 @@ h1 {
   .btn { font-size: 17px; }
 }
 @media (prefers-reduced-motion: reduce) { * { transition: none !important; } }
+
+
+/* =========================================
+   POSICIONAMENTO DO CADASTRO ABAIXO DO HEADER
+========================================= */
+
+/* Desktop */
+.signup {
+    margin-top: 199px;
+    padding-top: 0;
+}
+
+/* Tablet e celular */
+@media (max-width: 768px) {
+    .signup {
+        margin-top: 175px;
+        padding-top: 0;
+    }
+}
+
+/* Celulares de 321px a 375px */
+@media (min-width: 321px) and (max-width: 375px) {
+    .signup {
+        margin-top: 145px;
+        padding-top: 0;
+    }
+}
+
+/* Celulares de até 320px */
+@media (max-width: 320px) {
+    .signup {
+        margin-top: 175px;
+        padding-top: 0;
+    }
+}
+
+@media (max-width: 768px) {
+  :root {
+    --header-h: 145px;   /* 110px logo + 32px padding + 3px borda */
+  }
+
+  html {
+    scroll-padding-top: var(--header-h);
+  }
+
+  .hero,
+  .hero_contato,
+  .signup {
+    margin-top: var(--header-h);
+  }
+}

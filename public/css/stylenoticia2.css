@@ -30,9 +30,9 @@
 
 :root {
 
-  --primary-color: #4A4A49;
+  --primary-color: #3b3b3b;
 
-  --secondary-color: #F7941E;
+  --secondary-color: #F97412;
 
   --light-color: #F8F8F8;
 
@@ -56,7 +56,7 @@
 
 body {
 
-  font-family: 'Eras Light ITC', sans-serif;
+  font-family: 'Lato', sans-serif;
 
   color: var(--primary-color);
 
@@ -74,9 +74,9 @@ h3,
 
 h4 {
 
-  font-family: 'Eras Demi ITC', sans-serif;
+  font-family: 'Poppins', sans-serif;
 
-  color: var(--dark-color);
+  color: #5E2E81;
 
 }
 
@@ -100,7 +100,7 @@ header {
 
   background-color: white;
 
-  border-bottom: solid 5px #F7941E;
+  border-bottom: solid 5px #F97412;
 
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
 
@@ -370,7 +370,7 @@ nav {
 .about-text h3 {
 
   font-size: 1.8rem;
-
+    color: #5E2E81;
   margin-bottom: 1.5rem;
 
 }
@@ -659,7 +659,7 @@ figcaption{
 
   border-radius: 5px;
 
-  font-family: 'Eras Light ITC', sans-serif;
+  font-family: 'Lato', sans-serif;
 
 }
 
@@ -10074,5 +10074,44 @@ footer {
     font-display: block;
     src: url(../webfonts/fa-v4compatibility.woff2) format("woff2"),url(../webfonts/fa-v4compatibility.ttf) format("truetype");
     unicode-range: u+f041,u+f047,u+f065-f066,u+f07d-f07e,u+f080,u+f08b,u+f08e,u+f090,u+f09a,u+f0ac,u+f0ae,u+f0b2,u+f0d0,u+f0d6,u+f0e4,u+f0ec,u+f10a-f10b,u+f123,u+f13e,u+f148-f149,u+f14c,u+f156,u+f15e,u+f160-f161,u+f163,u+f175-f178,u+f195,u+f1f8,u+f219,u+f27a
+}
+
+@media (max-width: 768px) {
+  :root {
+    --header-h: 145px;
+  }
+
+  html {
+    scroll-padding-top: var(--header-h);
+  }
+
+  header {
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    padding: 16px 24px;
+  }
+
+  .logo_header {
+    margin-left: 0;
+  }
+
+  .logo_header img {
+    height: 110px;
+  }
+
+  .btn-menu {
+    position: static;
+    transform: none;
+    top: auto;
+    right: auto;
+    display: block;
+    font-family: inherit;
+  }
+
+  nav#menu {
+    width: 100%;
+    margin-top: 12px;
+  }
 }
 

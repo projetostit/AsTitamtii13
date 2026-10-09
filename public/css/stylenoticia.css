@@ -4,6 +4,13 @@
 
 .corpo-pagina main{
   padding-top: 0;
+  background-color: #F4E9FF;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 500;
+  font-style: normal;
 }
 
 .navegacao-at {
@@ -25,12 +32,14 @@
   padding: 7.5rem 0 0.2rem;
   background: linear-gradient(135deg, rgba(247, 148, 30, 0.08) 0%, var(--light-color) 50%, #fff 100%);
   border-bottom: 1px solid rgba(74, 74, 73, 0.08);
+  /* background-color: #F4E9FF; */
 }
 
 .oque-rolou {
   text-align: center;
   max-width: 720px;
   margin: 50px auto;
+  /* background-color: #F4E9FF; */
 }
 
 .not-memorias{
@@ -40,12 +49,13 @@
   color: var(--secondary-color);
   font-weight: bold;
   margin-bottom: 0.5rem;
+  color: #5E2E81;
 }
 
 .todas-as-not h1 {
   font-size: clamp(2rem, 4vw, 2.75rem);
   margin-bottom: 1rem;
-  color: var(--dark-color);
+  color: #5E2E81;
 }
 
 .not-p-memorias{
@@ -375,6 +385,7 @@
 .gallery-head h3 {
   font-size: 1.35rem;
   margin-bottom: 0.35rem;
+  color:#5E2E81;
 }
 
 .gallery-head p {
