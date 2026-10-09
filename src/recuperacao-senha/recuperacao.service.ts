@@ -1,7 +1,9 @@
+
 import { Injectable } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
 import { Repository } from 'typeorm';
 import { randomBytes } from 'crypto';
+import * as bcrypt from 'bcrypt';
 import { RecuperacaoSenha } from './recuperacao.entity';
 import { Usuario } from '../usuario/usuario.entity';
 
@@ -53,6 +55,61 @@ export class RecuperacaoService {
 
     return {
       mensagem: 'Token de recuperação gerado com sucesso',
+    };
+  }
+
+  async redefinir(token: string, novaSenha: string) {
+    if (!token || !novaSenha || novaSenha.trim().length === 0) {
+      return {
+        mensagem: 'Token e nova senha são obrigatórios',
+      };
+    }
+
+    const recuperacao = await this.recuperacaoRepository.findOne({
+      where: { token },
+    });
+
+    if (!recuperacao) {
+      return {
+        mensagem: 'Token de recuperação inválido',
+      };
+    }
+
+    if (new Date() > recuperacao.data_expiracao) {
+      await this.recuperacaoRepository.delete({
+        id_recuperacao: recuperacao.id_recuperacao,
+      });
+
+      return {
+        mensagem: 'Token de recuperação expirado',
+      };
+    }
+
+    const usuario = await this.usuarioRepository.findOne({
+      where: { id_usuario: recuperacao.id_usuario },
+    });
+
+    if (!usuario) {
+      await this.recuperacaoRepository.delete({
+        id_recuperacao: recuperacao.id_recuperacao,
+      });
+
+      return {
+        mensagem: 'Usuário não encontrado',
+      };
+    }
+
+    const senhaHash = await bcrypt.hash(novaSenha, 10);
+
+    usuario.senha = senhaHash;
+    await this.usuarioRepository.save(usuario);
+
+    await this.recuperacaoRepository.delete({
+      id_recuperacao: recuperacao.id_recuperacao,
+    });
+
+    return {
+      mensagem: 'Senha redefinida com sucesso',
     };
   }
 }

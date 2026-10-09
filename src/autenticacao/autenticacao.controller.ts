@@ -1,12 +1,12 @@
 import { Body, Controller, Post } from '@nestjs/common';
 import { AutenticacaoService } from './autenticacao.service';
-
+ 
 @Controller('autenticacao')
 export class AutenticacaoController {
   constructor(
     private readonly autenticacaoService: AutenticacaoService,
   ) {}
-
+ 
   @Post('login')
   login(
     @Body('email') email: string,
@@ -15,3 +15,4 @@ export class AutenticacaoController {
     return this.autenticacaoService.login(email, senha);
   }
 }
+ 

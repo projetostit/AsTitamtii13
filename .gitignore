@@ -1,8 +1,12 @@
-# Variáveis de ambiente
-.env
 
-# Dependências do Node.js
 node_modules/
 
 # Arquivos de log
 *.log
+
+# Arquivos gerados pela compilação
+dist/
+*.tsbuildinfo
+
+# Variáveis de ambiente
+.env
