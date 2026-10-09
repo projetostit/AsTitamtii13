@@ -52,6 +52,7 @@ const jwt_1 = require("@nestjs/jwt");
 const typeorm_2 = require("typeorm");
 const bcrypt = __importStar(require("bcrypt"));
 const usuario_entity_1 = require("../usuario/usuario.entity");
+const validacao_1 = require("../common/validacao");
 let AutenticacaoService = class AutenticacaoService {
     usuarioRepository;
     jwtService;
@@ -59,15 +60,33 @@ let AutenticacaoService = class AutenticacaoService {
         this.usuarioRepository = usuarioRepository;
         this.jwtService = jwtService;
     }
+    async perfil(authorization) {
+        const token = authorization?.match(/^Bearer (\S+)$/i)?.[1];
+        if (!token)
+            throw new common_1.UnauthorizedException('Faça login para continuar.');
+        let payload;
+        try {
+            payload = await this.jwtService.verifyAsync(token);
+        }
+        catch {
+            throw new common_1.UnauthorizedException('Sua sessão expirou. Entre novamente.');
+        }
+        if (!Number.isInteger(payload.sub))
+            throw new common_1.UnauthorizedException();
+        const usuario = await this.usuarioRepository.findOne({ where: { id_usuario: payload.sub } });
+        if (!usuario)
+            throw new common_1.UnauthorizedException();
+        return { id_usuario: usuario.id_usuario, nome: usuario.nome, email: usuario.email };
+    }
     async login(email, senha) {
+        email = (0, validacao_1.emailValido)(email);
+        senha = (0, validacao_1.senhaValida)(senha);
         const usuario = await this.usuarioRepository.findOne({
             where: { email },
         });
         if (!usuario ||
             !(await bcrypt.compare(senha, usuario.senha))) {
-            return {
-                mensagem: 'E-mail ou senha inválidos',
-            };
+            throw new common_1.UnauthorizedException('E-mail ou senha inválidos');
         }
         const access_token = await this.jwtService.signAsync({
             sub: usuario.id_usuario,

@@ -1,8 +1,9 @@
-import { Injectable } from '@nestjs/common';
+import { ConflictException, Injectable } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
 import { Repository } from 'typeorm';
 import * as bcrypt from 'bcrypt';
 import { Usuario } from './usuario.entity';
+import { emailValido, texto, senhaValida } from '../common/validacao';
 
 @Injectable()
 export class UsuarioService {
@@ -12,14 +13,15 @@ export class UsuarioService {
     ) { }
 
     async cadastrar(nome: string, email: string, senha: string) {
+        nome = texto(nome, 'Nome', 100);
+        email = emailValido(email);
+        senha = senhaValida(senha);
         const usuarioExistente = await this.usuarioRepository.findOne({
             where: { email },
         });
 
         if (usuarioExistente) {
-            return {
-                mensagem: 'E-mail já cadastrado',
-            };
+            throw new ConflictException('E-mail já cadastrado');
         }
 
         const senhaHash = await bcrypt.hash(senha, 10);

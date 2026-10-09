@@ -17,12 +17,17 @@ const common_1 = require("@nestjs/common");
 const typeorm_1 = require("@nestjs/typeorm");
 const typeorm_2 = require("typeorm");
 const contato_entity_1 = require("./contato.entity");
+const validacao_1 = require("../common/validacao");
 let ContatoService = class ContatoService {
     contatoRepository;
     constructor(contatoRepository) {
         this.contatoRepository = contatoRepository;
     }
     async enviar(nome, email, curso_area_interesse, mensagem) {
+        nome = (0, validacao_1.texto)(nome, 'Nome', 100);
+        email = (0, validacao_1.emailValido)(email);
+        mensagem = (0, validacao_1.texto)(mensagem, 'Mensagem', 10000);
+        curso_area_interesse = curso_area_interesse ? (0, validacao_1.texto)(curso_area_interesse, 'Curso / Área de interesse', 150) : '';
         const contato = this.contatoRepository.create({
             nome,
             email,

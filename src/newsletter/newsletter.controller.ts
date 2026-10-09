@@ -8,8 +8,8 @@ export class NewsletterController {
   ) {}
  
   @Post('inscrever')
-  inscrever(@Body('id_usuario') id_usuario: number) {
-    return this.newsletterService.inscrever(id_usuario);
+  inscrever(@Body('email') email: string) {
+    return this.newsletterService.inscrever(email);
   }
 }
  

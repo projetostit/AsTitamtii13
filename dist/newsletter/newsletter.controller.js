@@ -20,16 +20,16 @@ let NewsletterController = class NewsletterController {
     constructor(newsletterService) {
         this.newsletterService = newsletterService;
     }
-    inscrever(id_usuario) {
-        return this.newsletterService.inscrever(id_usuario);
+    inscrever(email) {
+        return this.newsletterService.inscrever(email);
     }
 };
 exports.NewsletterController = NewsletterController;
 __decorate([
     (0, common_1.Post)('inscrever'),
-    __param(0, (0, common_1.Body)('id_usuario')),
+    __param(0, (0, common_1.Body)('email')),
     __metadata("design:type", Function),
-    __metadata("design:paramtypes", [Number]),
+    __metadata("design:paramtypes", [String]),
     __metadata("design:returntype", void 0)
 ], NewsletterController.prototype, "inscrever", null);
 exports.NewsletterController = NewsletterController = __decorate([

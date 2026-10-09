@@ -17,12 +17,21 @@ const common_1 = require("@nestjs/common");
 const typeorm_1 = require("@nestjs/typeorm");
 const typeorm_2 = require("typeorm");
 const newsletter_entity_1 = require("./newsletter.entity");
+const usuario_entity_1 = require("../usuario/usuario.entity");
+const validacao_1 = require("../common/validacao");
 let NewsletterService = class NewsletterService {
     newsletterRepository;
-    constructor(newsletterRepository) {
+    usuarioRepository;
+    constructor(newsletterRepository, usuarioRepository) {
         this.newsletterRepository = newsletterRepository;
+        this.usuarioRepository = usuarioRepository;
     }
-    async inscrever(id_usuario) {
+    async inscrever(email) {
+        email = (0, validacao_1.emailValido)(email);
+        const usuario = await this.usuarioRepository.findOne({ where: { email } });
+        if (!usuario)
+            throw new common_1.BadRequestException('Crie uma conta com este e-mail antes de assinar as novidades.');
+        const id_usuario = usuario.id_usuario;
         const inscricaoExistente = await this.newsletterRepository.findOne({
             where: { id_usuario },
         });
@@ -46,6 +55,8 @@ exports.NewsletterService = NewsletterService;
 exports.NewsletterService = NewsletterService = __decorate([
     (0, common_1.Injectable)(),
     __param(0, (0, typeorm_1.InjectRepository)(newsletter_entity_1.Newsletter)),
-    __metadata("design:paramtypes", [typeorm_2.Repository])
+    __param(1, (0, typeorm_1.InjectRepository)(usuario_entity_1.Usuario)),
+    __metadata("design:paramtypes", [typeorm_2.Repository,
+        typeorm_2.Repository])
 ], NewsletterService);
 //# sourceMappingURL=newsletter.service.js.map

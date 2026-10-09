@@ -1,7 +1,7 @@
 $(document).ready(function () {
 
     // ── Carrossel de fotos ──
-    $('.fotos_carrossel').slick({
+    if ($.fn.slick) $('.fotos_carrossel').slick({
         dots: true,
         infinite: true,
         speed: 300,
@@ -14,7 +14,7 @@ $(document).ready(function () {
     });
 
     // ── Carrossel #track (só se existir) ──
-    if ($('#track').length) {
+    if ($.fn.slick && $('#track').length) {
         $('#track').slick({
             slidesToShow: 3,
             slidesToScroll: 3,

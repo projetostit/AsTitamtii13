@@ -112,3 +112,44 @@ Nest is an MIT-licensed open source project. It can grow thanks to the sponsors 
 ## License
 
 Nest is [MIT licensed](https://github.com/nestjs/nest/blob/master/LICENSE).
+
+
+## Integração do site com a API
+
+O Nest serve os arquivos de `public` e a API na mesma origem.
+Configure no arquivo `.env` as variáveis `DB_HOST`, `DB_PORT`,
+`DB_USERNAME`, `DB_PASS`, `DB_DATABASE` e `JWT_SECRET`.
+O banco MySQL deve conter as tabelas das entidades em `src`;
+`synchronize` está desativado e a aplicação não cria tabelas automaticamente.
+
+Execute `npm install` se necessário e `npm run start:dev`.
+Abra **http://localhost:3000** (ou a porta definida em `PORT`).
+Use o servidor Nest para abrir o site, em vez de abrir o HTML diretamente.
+
+- Cadastro: `POST /usuario/cadastrar` com nome, email e senha.
+- Login: `POST /autenticacao/login`; o token fica no sessionStorage da aba.
+- Perfil: `GET /autenticacao/me` com Authorization: Bearer e JWT válido.
+- Contato: `POST /contato/enviar` com nome, email, curso_area_interesse e mensagem.
+- Newsletter: `POST /newsletter/inscrever` com email de uma conta já cadastrada.
+  A opção de novidades no cadastro também chama essa rota.
+  Esta rota passou a receber email em vez de id_usuario.
+
+O script `public/js/api.js` mostra mensagens de retorno e bloqueia envios
+duplicados enquanto uma requisição está em andamento. Para servir o frontend
+em outra origem, defina `window.ELASTITAM_API_URL` antes de carregar esse script.
+
+### Limites atuais
+
+O backend não possui envio de e-mail para recuperação de senha. A página de
+recuperação explica essa limitação e direciona ao contato; não promete envio
+de um link. Oficinas, histórico, certificados e notícias continuam sendo
+conteúdo estático: não há endpoints para esses dados. Os totais fictícios do
+dashboard foram substituídos por traços. A verificação de sessão no frontend
+controla a navegação; dados privados devem sempre ser protegidos no backend.
+
+### Verificação
+
+`npm run test:integration` verifica as rotas HTTP
+com repositórios em memória, incluindo cadastro duplicado, credenciais
+incorretas, token inválido/expirado, contato e newsletter. Esse teste não
+substitui a validação com seu banco MySQL e um navegador.

@@ -9,6 +9,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.NewsletterModule = void 0;
 const common_1 = require("@nestjs/common");
 const typeorm_1 = require("@nestjs/typeorm");
+const usuario_entity_1 = require("../usuario/usuario.entity");
 const newsletter_entity_1 = require("./newsletter.entity");
 const newsletter_controller_1 = require("./newsletter.controller");
 const newsletter_service_1 = require("./newsletter.service");
@@ -17,7 +18,7 @@ let NewsletterModule = class NewsletterModule {
 exports.NewsletterModule = NewsletterModule;
 exports.NewsletterModule = NewsletterModule = __decorate([
     (0, common_1.Module)({
-        imports: [typeorm_1.TypeOrmModule.forFeature([newsletter_entity_1.Newsletter])],
+        imports: [typeorm_1.TypeOrmModule.forFeature([newsletter_entity_1.Newsletter, usuario_entity_1.Usuario])],
         controllers: [newsletter_controller_1.NewsletterController],
         providers: [newsletter_service_1.NewsletterService],
     })

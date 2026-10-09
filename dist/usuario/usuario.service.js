@@ -51,19 +51,21 @@ const typeorm_1 = require("@nestjs/typeorm");
 const typeorm_2 = require("typeorm");
 const bcrypt = __importStar(require("bcrypt"));
 const usuario_entity_1 = require("./usuario.entity");
+const validacao_1 = require("../common/validacao");
 let UsuarioService = class UsuarioService {
     usuarioRepository;
     constructor(usuarioRepository) {
         this.usuarioRepository = usuarioRepository;
     }
     async cadastrar(nome, email, senha) {
+        nome = (0, validacao_1.texto)(nome, 'Nome', 100);
+        email = (0, validacao_1.emailValido)(email);
+        senha = (0, validacao_1.senhaValida)(senha);
         const usuarioExistente = await this.usuarioRepository.findOne({
             where: { email },
         });
         if (usuarioExistente) {
-            return {
-                mensagem: 'E-mail já cadastrado',
-            };
+            throw new common_1.ConflictException('E-mail já cadastrado');
         }
         const senhaHash = await bcrypt.hash(senha, 10);
         const usuario = this.usuarioRepository.create({

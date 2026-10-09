@@ -1,16 +1,24 @@
-import { Injectable } from '@nestjs/common';
+import { BadRequestException, Injectable } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
 import { Repository } from 'typeorm';
 import { Newsletter } from './newsletter.entity';
+import { Usuario } from '../usuario/usuario.entity';
+import { emailValido } from '../common/validacao';
 
 @Injectable()
 export class NewsletterService {
     constructor(
         @InjectRepository(Newsletter)
         private readonly newsletterRepository: Repository<Newsletter>,
+        @InjectRepository(Usuario)
+        private readonly usuarioRepository: Repository<Usuario>,
     ) { }
 
-    async inscrever(id_usuario: number) {
+    async inscrever(email: string) {
+        email = emailValido(email);
+        const usuario = await this.usuarioRepository.findOne({ where: { email } });
+        if (!usuario) throw new BadRequestException('Crie uma conta com este e-mail antes de assinar as novidades.');
+        const id_usuario = usuario.id_usuario;
         const inscricaoExistente = await this.newsletterRepository.findOne({
             where: { id_usuario },
         });

@@ -20,11 +20,21 @@ let AutenticacaoController = class AutenticacaoController {
     constructor(autenticacaoService) {
         this.autenticacaoService = autenticacaoService;
     }
+    perfil(authorization) {
+        return this.autenticacaoService.perfil(authorization);
+    }
     login(email, senha) {
         return this.autenticacaoService.login(email, senha);
     }
 };
 exports.AutenticacaoController = AutenticacaoController;
+__decorate([
+    (0, common_1.Get)('me'),
+    __param(0, (0, common_1.Headers)('authorization')),
+    __metadata("design:type", Function),
+    __metadata("design:paramtypes", [String]),
+    __metadata("design:returntype", void 0)
+], AutenticacaoController.prototype, "perfil", null);
 __decorate([
     (0, common_1.Post)('login'),
     __param(0, (0, common_1.Body)('email')),

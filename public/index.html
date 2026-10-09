@@ -406,10 +406,10 @@
         <div class="newsletter-card">
             <h3>Receba as novidades do ElasTitam</h3>
             <p>Cadastre seu e-mail para acompanhar notícias, oficinas, encontros e oportunidades.</p>
-            <div class="newsletter-form">
-                <input type="email" placeholder="Digite seu e-mail">
-                <button>Cadastrar</button>
-            </div>
+            <form class="newsletter-form">
+                <input type="email" name="email" aria-label="E-mail para novidades" placeholder="Digite seu e-mail" required>
+                <button type="submit">Cadastrar</button>
+            </form>
             <span>Sem spam. Apenas conteúdos e novidades do projeto.</span>
         </div>
     </section>
@@ -444,6 +444,7 @@
     <!-- Seu arquivo JS -->
     <script src="js/script.js"></script>
 
+  <script src="js/api.js"></script>
 </body>
 
 </html>

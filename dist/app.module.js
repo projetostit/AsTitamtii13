@@ -11,8 +11,6 @@ const common_1 = require("@nestjs/common");
 const config_1 = require("@nestjs/config");
 const serve_static_1 = require("@nestjs/serve-static");
 const path_1 = require("path");
-const app_controller_1 = require("./app.controller");
-const app_service_1 = require("./app.service");
 const database_module_1 = require("./database/database.module");
 const usuario_module_1 = require("./usuario/usuario.module");
 const autenticacao_module_1 = require("./autenticacao/autenticacao.module");
@@ -39,8 +37,8 @@ exports.AppModule = AppModule = __decorate([
             contato_module_1.ContatoModule,
             recuperacao_senha_module_1.RecuperacaoSenhaModule,
         ],
-        controllers: [app_controller_1.AppController],
-        providers: [app_service_1.AppService],
+        controllers: [],
+        providers: [],
     })
 ], AppModule);
 //# sourceMappingURL=app.module.js.map

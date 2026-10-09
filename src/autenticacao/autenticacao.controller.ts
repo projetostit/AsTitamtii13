@@ -1,4 +1,4 @@
-import { Body, Controller, Post } from '@nestjs/common';
+import { Body, Controller, Get, Headers, Post } from '@nestjs/common';
 import { AutenticacaoService } from './autenticacao.service';
  
 @Controller('autenticacao')
@@ -7,6 +7,11 @@ export class AutenticacaoController {
     private readonly autenticacaoService: AutenticacaoService,
   ) {}
  
+  @Get('me')
+  perfil(@Headers('authorization') authorization?: string) {
+    return this.autenticacaoService.perfil(authorization);
+  }
+
   @Post('login')
   login(
     @Body('email') email: string,
