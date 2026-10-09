@@ -8,4 +8,7 @@ export declare class RecuperacaoService {
     solicitar(email: string): Promise<{
         mensagem: string;
     }>;
+    redefinir(token: string, novaSenha: string): Promise<{
+        mensagem: string;
+    }>;
 }

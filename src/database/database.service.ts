@@ -1,5 +1,6 @@
 import { Injectable } from '@nestjs/common';
 import { ConfigService } from '@nestjs/config';
+import mysql from 'mysql2/promise';
 import { createPool, Pool } from 'mysql2/promise';
 
 @Injectable()

@@ -9,9 +9,11 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.AppModule = void 0;
 const common_1 = require("@nestjs/common");
 const config_1 = require("@nestjs/config");
-const typeorm_1 = require("@nestjs/typeorm");
+const serve_static_1 = require("@nestjs/serve-static");
+const path_1 = require("path");
 const app_controller_1 = require("./app.controller");
 const app_service_1 = require("./app.service");
+const database_module_1 = require("./database/database.module");
 const usuario_module_1 = require("./usuario/usuario.module");
 const autenticacao_module_1 = require("./autenticacao/autenticacao.module");
 const newsletter_module_1 = require("./newsletter/newsletter.module");
@@ -27,20 +29,10 @@ exports.AppModule = AppModule = __decorate([
                 isGlobal: true,
                 envFilePath: '.env',
             }),
-            typeorm_1.TypeOrmModule.forRootAsync({
-                imports: [config_1.ConfigModule],
-                inject: [config_1.ConfigService],
-                useFactory: (configService) => ({
-                    type: 'mysql',
-                    host: configService.get('DB_HOST'),
-                    port: configService.get('DB_PORT'),
-                    username: configService.get('DB_USERNAME'),
-                    password: configService.get('DB_PASS'),
-                    database: configService.get('DB_DATABASE'),
-                    autoLoadEntities: true,
-                    synchronize: false,
-                }),
+            serve_static_1.ServeStaticModule.forRoot({
+                rootPath: (0, path_1.join)(__dirname, '..', 'public'),
             }),
+            database_module_1.DatabaseModule,
             usuario_module_1.UsuarioModule,
             autenticacao_module_1.AutenticacaoModule,
             newsletter_module_1.NewsletterModule,

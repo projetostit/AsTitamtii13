@@ -1,7 +1,7 @@
 import { RecuperacaoService } from './recuperacao.service';
-export declare class RecuperacaoController {
-    private readonly recuperacaoService;
-    constructor(recuperacaoService: RecuperacaoService);
+export declare class RecuperacaoSenhaController {
+    private readonly recuperacaoSenhaService;
+    constructor(recuperacaoSenhaService: RecuperacaoService);
     solicitar(email: string): Promise<{
         mensagem: string;
     }>;

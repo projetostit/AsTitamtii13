@@ -12,28 +12,28 @@ var __param = (this && this.__param) || function (paramIndex, decorator) {
     return function (target, key) { decorator(target, key, paramIndex); }
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.RecuperacaoController = void 0;
+exports.RecuperacaoSenhaController = void 0;
 const common_1 = require("@nestjs/common");
 const recuperacao_service_1 = require("./recuperacao.service");
-let RecuperacaoController = class RecuperacaoController {
-    recuperacaoService;
-    constructor(recuperacaoService) {
-        this.recuperacaoService = recuperacaoService;
+let RecuperacaoSenhaController = class RecuperacaoSenhaController {
+    recuperacaoSenhaService;
+    constructor(recuperacaoSenhaService) {
+        this.recuperacaoSenhaService = recuperacaoSenhaService;
     }
     solicitar(email) {
-        return this.recuperacaoService.solicitar(email);
+        return this.recuperacaoSenhaService.solicitar(email);
     }
 };
-exports.RecuperacaoController = RecuperacaoController;
+exports.RecuperacaoSenhaController = RecuperacaoSenhaController;
 __decorate([
     (0, common_1.Post)('solicitar'),
     __param(0, (0, common_1.Body)('email')),
     __metadata("design:type", Function),
     __metadata("design:paramtypes", [String]),
     __metadata("design:returntype", void 0)
-], RecuperacaoController.prototype, "solicitar", null);
-exports.RecuperacaoController = RecuperacaoController = __decorate([
+], RecuperacaoSenhaController.prototype, "solicitar", null);
+exports.RecuperacaoSenhaController = RecuperacaoSenhaController = __decorate([
     (0, common_1.Controller)('recuperacao-senha'),
     __metadata("design:paramtypes", [recuperacao_service_1.RecuperacaoService])
-], RecuperacaoController);
+], RecuperacaoSenhaController);
 //# sourceMappingURL=recuperacao.controller.js.map

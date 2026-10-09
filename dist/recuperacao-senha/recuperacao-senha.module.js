@@ -24,7 +24,7 @@ exports.RecuperacaoSenhaModule = RecuperacaoSenhaModule = __decorate([
                 usuario_entity_1.Usuario,
             ]),
         ],
-        controllers: [recuperacao_controller_1.RecuperacaoController],
+        controllers: [recuperacao_controller_1.RecuperacaoSenhaController],
         providers: [recuperacao_service_1.RecuperacaoService],
     })
 ], RecuperacaoSenhaModule);
