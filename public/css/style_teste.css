@@ -1,6 +1,12 @@
 /* ── Reset e configurações globais ── */
 
-html,
+html {
+  scroll-padding-top: 200px;
+  /* desktop: altura do header */
+  width: 100%;
+  overflow-x: hidden;
+}
+
 body {
   width: 100%;
   overflow-x: hidden;
@@ -530,8 +536,8 @@ nav#menu ul li a:hover {
   font-size: 0.70rem;
   text-decoration: none;
   transition:
-  background-color 0.2s ease,
-  transform 0.2s ease;
+    background-color 0.2s ease,
+    transform 0.2s ease;
   text-transform: uppercase;
 }
 
@@ -2647,5 +2653,889 @@ figcaption {
     font-family: "Lato", sans-serif;
     font-size: 0.95rem;
     line-height: 1.5;
+  }
+}
+
+
+
+
+/* =========================================================
+   PÁGINA DE CONTATO
+   O menu, o header, o footer, o reset e as variáveis globais
+   são definidos no style_teste.css.
+========================================================= */
+
+/* =========================================================
+   ELEMENTOS DE FORMULÁRIO
+========================================================= */
+
+button,
+input,
+textarea {
+  font-family: "Lato", sans-serif;
+}
+
+/* =========================================================
+   HERO — CONTATO
+========================================================= */
+
+.hero_contato {
+  position: relative;
+  width: 100%;
+  height: auto;
+  margin-top: 159px;
+  background-image: url("../img_elastitam/bannerContato.png");
+  background-size: 100% auto;
+  background-position: top center;
+  background-repeat: no-repeat;
+  aspect-ratio: 1366 / 497;
+  display: flex;
+  align-items: center;
+}
+
+/* =========================================================
+   SEÇÃO DO FORMULÁRIO
+========================================================= */
+
+.formulario_contato {
+  width: 100%;
+  padding: 80px var(--site-padding-x);
+  background-color: #fff;
+}
+
+.formulario_conteudo {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 70px;
+}
+
+/* =========================================================
+   IMAGEM DO FORMULÁRIO
+========================================================= */
+
+.formulario_imagem {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.formulario_imagem img {
+  width: 140%;
+  max-width: 690px;
+  margin-left: -250px;
+  object-fit: cover;
+  border-radius: 100px;
+  filter: drop-shadow(0 4px 5px rgba(0, 0, 0, 0.15));
+}
+
+/* =========================================================
+   ÁREA DO FORMULÁRIO
+========================================================= */
+
+.formulario_area {
+  flex: 1;
+  width: 100%;
+  max-width: 550px;
+}
+
+.formulario_area form {
+  width: 100%;
+}
+
+/* =========================================================
+   CAMPOS
+========================================================= */
+
+.campo {
+  width: 100%;
+  margin-bottom: 22px;
+}
+
+.campo label {
+  display: block;
+  margin-bottom: 8px;
+  color: #444;
+  font-family: "Lato", sans-serif;
+  font-size: 0.95rem;
+  font-weight: 600;
+}
+
+.campo input,
+.campo textarea {
+  width: 100%;
+  padding: 14px 16px;
+  border: 1px solid #d8d8d8;
+  border-radius: 10px;
+  outline: none;
+  background-color: #fff;
+  color: #444;
+  font-family: "Lato", sans-serif;
+  font-size: 1rem;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.campo input {
+  height: 50px;
+}
+
+.campo textarea {
+  min-height: 140px;
+  resize: vertical;
+}
+
+/* =========================================================
+   FOCO DOS CAMPOS
+========================================================= */
+
+.campo input:focus,
+.campo textarea:focus {
+  border-color: #F96412;
+  box-shadow: 0 0 0 3px rgba(249, 100, 18, 0.10);
+}
+
+/* =========================================================
+   CAMPO DE MENSAGEM
+========================================================= */
+
+.campo_mensagem {
+  margin-bottom: 25px;
+}
+
+/* =========================================================
+   BOTÃO DE ENVIO
+========================================================= */
+
+.botao_cadastro {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 190px;
+  padding: 14px 16px;
+  border: none;
+  border-radius: 12px;
+  background-color: #F96412;
+  color: #fff;
+  font-family: "Lato", sans-serif;
+  font-size: 0.95rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.botao_cadastro:hover {
+  background-color: #5E2E81;
+  transform: translateY(-2px);
+}
+
+/* =========================================================
+   BENEFÍCIOS
+========================================================= */
+
+.beneficios {
+  width: 100%;
+  padding: 70px 30px;
+  background-color: #F9F2FF;
+}
+
+.beneficios_conteudo {
+  width: 100%;
+  max-width: 1000px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 60px;
+}
+
+.beneficio {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  gap: 18px;
+}
+
+/* Ícone */
+
+.beneficio_icone {
+  width: 66px;
+  height: 66px;
+  min-width: 66px;
+  border: 1.5px solid #5E2E81;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #fff;
+}
+
+.beneficio_icone svg {
+  width: 34px;
+  height: 34px;
+  fill: none;
+  stroke: #5E2E81;
+  stroke-width: 1.8;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+/* Texto */
+
+.beneficio_texto {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.beneficio_texto h2 {
+  margin: 0 0 7px;
+  font-family: "Lato", sans-serif;
+  font-size: 15px;
+  line-height: 1.2;
+  font-weight: 700;
+  color: #FF6400;
+}
+
+.beneficio_texto p {
+  max-width: 190px;
+  margin: 0;
+  font-family: "Lato", sans-serif;
+  font-size: 10px;
+  line-height: 1.4;
+  font-weight: 400;
+  color: #3B3B3B;
+}
+
+/* =========================================================
+   RESPONSIVIDADE — TABLET
+========================================================= */
+
+@media (max-width: 1024px) {
+  .formulario_conteudo {
+    gap: 50px;
+  }
+
+  .formulario_imagem img {
+    width: 120%;
+    margin-left: -100px;
+  }
+}
+
+/* =========================================================
+   RESPONSIVIDADE — TABLET E CELULAR
+========================================================= */
+
+@media (max-width: 768px) {
+  .hero_contato {
+    background-size: cover;
+    background-position: center;
+  }
+
+  .formulario_contato {
+    padding: 50px var(--site-padding-x);
+  }
+
+  .formulario_conteudo {
+    flex-direction: column;
+    gap: 35px;
+  }
+
+  .formulario_area {
+    width: 100%;
+    max-width: 550px;
+  }
+
+  .beneficios {
+    padding: 45px 25px;
+  }
+
+  .beneficios_conteudo {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 30px;
+  }
+
+  .beneficio {
+    width: 100%;
+    gap: 18px;
+  }
+
+  .beneficio_icone {
+    width: 62px;
+    height: 62px;
+    min-width: 62px;
+  }
+
+  .beneficio_icone svg {
+    width: 31px;
+    height: 31px;
+  }
+
+  .beneficio_texto h2 {
+    font-size: 15px;
+  }
+
+  .beneficio_texto p {
+    max-width: 300px;
+    font-size: 10px;
+  }
+
+  header {
+    padding: 16px 24px;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  .logo_header {
+    margin-left: 0;
+  }
+
+  .logo_header img {
+    height: 110px;
+  }
+
+  .btn-menu {
+    display: block;
+    position: absolute;
+    right: 16px;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+}
+
+/* =========================================================
+   IMAGEM OCULTA EM TELAS MENORES
+========================================================= */
+
+@media (max-width: 1023px) {
+  .formulario_imagem {
+    display: none;
+  }
+}
+
+/* =========================================================
+   CELULARES PEQUENOS
+========================================================= */
+
+@media (max-width: 480px) {
+  .hero_contato {
+    background-size: cover;
+    background-position: center;
+  }
+
+  .formulario_contato {
+    padding: 40px 18px;
+  }
+
+  .formulario_conteudo {
+    gap: 30px;
+  }
+
+  .campo {
+    margin-bottom: 18px;
+  }
+
+  .campo input,
+  .campo textarea {
+    padding: 12px 14px;
+  }
+
+  .campo input {
+    height: 46px;
+  }
+
+  .campo textarea {
+    min-height: 120px;
+  }
+
+  .botao_cadastro {
+    width: 100%;
+  }
+
+  .beneficios {
+    padding: 40px 18px;
+  }
+
+  .beneficios_conteudo {
+    gap: 25px;
+  }
+
+  .beneficio {
+    gap: 14px;
+  }
+
+  .beneficio_icone {
+    width: 54px;
+    height: 54px;
+    min-width: 54px;
+  }
+
+  .beneficio_icone svg {
+    width: 27px;
+    height: 27px;
+  }
+
+  .beneficio_texto h2 {
+    font-size: 14px;
+  }
+
+  .beneficio_texto p {
+    font-size: 10px;
+  }
+}
+
+/* =========================================================
+   TELAS MUITO PEQUENAS
+========================================================= */
+
+@media (max-width: 320px) {
+  .hero_contato {
+    margin-top: 175px;
+  }
+
+  .formulario_contato {
+    padding: 35px 16px;
+  }
+
+  .beneficios {
+    padding: 35px 16px;
+  }
+
+  .beneficio {
+    gap: 12px;
+  }
+
+  .beneficio_icone {
+    width: 48px;
+    height: 48px;
+    min-width: 48px;
+  }
+
+  .beneficio_icone svg {
+    width: 24px;
+    height: 24px;
+  }
+}
+
+
+
+/* ==========================================
+   PÁGINA DE CADASTRO
+========================================== */
+
+.signup {
+  display: grid;
+  grid-template-columns: minmax(0, 0.85fr) minmax(0, 1.15fr);
+  align-items: stretch;
+  min-width: 0;
+  margin-top: 199px;
+  padding-top: 0;
+  background-color: #fff;
+}
+
+.signup__media {
+  position: relative;
+  min-width: 0;
+  min-height: 720px;
+  overflow: hidden;
+  background: #efe7f7;
+}
+
+.signup__media img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+.signup__panel {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 0;
+  padding: 40px clamp(28px, 4vw, 64px);
+  background: #fff;
+}
+
+.signup .form-wrap {
+  width: 100%;
+  max-width: 560px;
+  margin: 0 auto;
+}
+
+.signup h1 {
+  font-family: "Poppins", sans-serif;
+  font-size: 3rem;
+  font-weight: 500;
+  line-height: 1.15;
+  letter-spacing: -0.5px;
+  color: var(--roxo);
+}
+
+.signup .lead {
+  max-width: 470px;
+  margin-top: 24px;
+  color: #3b3b3b;
+  font-family: "Lato", sans-serif;
+  line-height: 1.25;
+}
+
+.signup .tabs {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  height: 69px;
+  margin-top: 56px;
+  overflow: hidden;
+  border: 1px solid #cfcfcf;
+  border-radius: 8px;
+}
+
+.signup .tab {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  color: #666;
+  font-size: 18px;
+  transition: background 0.2s;
+}
+
+.signup .tab i {
+  color: #9a9a9a;
+  font-size: 27px;
+}
+
+.signup .tab:hover {
+  background: #f7f2fd;
+}
+
+.signup .tab--active,
+.signup .tab--active:hover {
+  background: var(--roxo);
+  color: #fff;
+}
+
+.signup .tab--active i {
+  color: #fff;
+}
+
+.signup .form {
+  margin-top: 40px;
+}
+
+.signup .field+.field {
+  margin-top: 28px;
+}
+
+.signup .field label {
+  display: block;
+  margin-bottom: 14px;
+  font-size: 19px;
+  line-height: 1.2;
+  font-weight: 700;
+  font-family: "Poppins", sans-serif;
+}
+
+.signup .field input {
+  width: 100%;
+  height: 60px;
+  padding: 0 20px;
+  border: 1px solid #cfcfcf;
+  border-radius: 8px;
+  background: #fff;
+  color: var(--cinza);
+  font: inherit;
+  font-size: 18px;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.signup .field input:focus {
+  outline: none;
+  border-color: var(--laranja);
+  box-shadow: 0 0 0 3px rgba(249, 100, 18, 0.10);
+}
+
+.signup .check {
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+  max-width: 400px;
+  margin-top: 26px;
+  color: #666;
+  font-size: 16.5px;
+  line-height: 1.3;
+  cursor: pointer;
+  font-family: "Lato", sans-serif;
+}
+
+.signup .check input {
+  display: grid;
+  flex: none;
+  place-items: center;
+  width: 22px;
+  height: 22px;
+  margin-top: 1px;
+  appearance: none;
+  border: 1.5px solid var(--roxo);
+  border-radius: 4px;
+  background: #fff;
+  cursor: pointer;
+}
+
+.signup .check input:checked {
+  background: var(--roxo);
+}
+
+.signup .check input:checked::after {
+  content: "\2713";
+  color: #fff;
+  font-size: 15px;
+  line-height: 1;
+}
+
+.signup .btn {
+  display: block;
+  width: 100%;
+  min-height: 60px;
+  margin-top: 28px;
+  border: 0;
+  border-radius: 8px;
+  background: var(--laranja);
+  color: #fff;
+  font: inherit;
+  font-size: 20px;
+  font-weight: 500;
+  font-family: "Poppins", sans-serif;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.signup .btn:hover {
+  background: var(--roxo);
+}
+
+.signup .divider {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+  margin: 39px 7px 0 0;
+  color: #666;
+  font-size: 15px;
+  font-family: "Lato", sans-serif;
+}
+
+.signup .divider::before,
+.signup .divider::after {
+  content: "";
+  flex: 1;
+  height: 1px;
+  background: #cfcfcf;
+}
+
+.signup .login {
+  margin-top: 30px;
+  padding-right: 8px;
+  color: #666;
+  font-size: 16px;
+  text-align: center;
+  font-family: "Lato", sans-serif;
+}
+
+.signup .login a {
+  color: var(--roxo);
+  font-weight: 700;
+}
+
+.signup .login a:hover {
+  text-decoration: underline;
+}
+
+/* Fonte Lato nas abas e nos rótulos dos campos */
+.signup .tab {
+  font-family: "Lato", sans-serif;
+  text-decoration: none;
+}
+
+.signup .field label {
+  font-family: "Lato", sans-serif;
+  color: #3B3B3B;
+}
+
+
+/* Responsividade do cadastro */
+
+@media (max-width: 1100px) {
+  .signup__panel {
+    padding: 36px 28px;
+  }
+
+  .signup h1 {
+    font-size: 2.5rem;
+  }
+
+  .signup .tabs {
+    margin-top: 36px;
+  }
+}
+
+@media (max-width: 768px) {
+  .signup {
+    grid-template-columns: 1fr;
+    margin-top: 175px;
+  }
+
+  .signup__media {
+    height: 300px;
+    min-height: 0;
+  }
+
+  .signup__media img {
+    object-position: center;
+  }
+
+  .signup__panel {
+    padding: 36px 6% 48px;
+  }
+
+  .signup .form-wrap {
+    max-width: 640px;
+  }
+
+  .signup h1 {
+    font-size: 2.5rem;
+  }
+
+  /* header {
+    padding: 16px 24px;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  .logo_header {
+    margin-left: 0;
+  }
+
+  .logo_header img {
+    height: 110px;
+  }
+
+  .btn-menu {
+    display: block;
+    position: absolute;
+    right: 16px;
+    top: 50%;
+    transform: translateY(-50%);
+  } */
+}
+
+@media (min-width: 321px) and (max-width: 375px) {
+  .signup {
+    margin-top: 145px;
+  }
+}
+
+@media (max-width: 320px) {
+  .signup {
+    margin-top: 175px;
+  }
+
+  .signup__media {
+    height: 220px;
+  }
+
+  .signup h1 {
+    font-size: 2rem;
+  }
+
+  .signup .tab {
+    gap: 6px;
+    font-size: 15px;
+  }
+
+  .signup .tab i {
+    font-size: 20px;
+  }
+
+  .signup .field label {
+    font-size: 17px;
+  }
+
+  .signup .btn {
+    font-size: 16px;
+  }
+}
+
+@media (max-width: 480px) {
+  .signup__media {
+    height: 220px;
+  }
+
+  .signup h1 {
+    font-size: 2.1rem;
+  }
+
+  .signup .tab {
+    gap: 8px;
+    font-size: 16px;
+  }
+
+  .signup .tab i {
+    font-size: 22px;
+  }
+
+  .signup .btn {
+    font-size: 17px;
+  }
+}
+
+@media (max-width: 768px) {
+  :root {
+    --header-h: 145px;   /* 110px logo + 32px padding + 3px borda */
+  }
+
+  html {
+    scroll-padding-top: var(--header-h);
+  }
+
+  .hero,
+  .hero_contato,
+  .signup {
+    margin-top: var(--header-h);
+  }
+
+  header {
+    flex-wrap: wrap;
+    justify-content: space-between;
+    /* logo à esquerda, botão à direita */
+    align-items: center;
+    /* padding: 16px 24px; */
+  }
+
+  .logo_header {
+    margin-left: 0;
+  }
+
+  .logo_header img {
+    height: 110px;
+  }
+
+  .btn-menu {
+    position: static;
+    /* sai do absolute */
+    transform: none;
+    top: auto;
+    right: auto;
+    display: block;
+  }
+
+  nav#menu {
+    width: 100%;
+    margin-top: 12px;
   }
 }

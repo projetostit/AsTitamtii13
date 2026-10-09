@@ -9,6 +9,11 @@
   --peach-line: #fbc9ae;
   --text: #333;
   --side: 5.05%;
+
+  /* Variáveis usadas pelo header padronizado */
+  --laranja: #F96412;
+  --branco: #ffffff;
+  --site-padding-x: 80px;
 }
 
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -25,22 +30,66 @@ ul { list-style: none; }
 h1, h2, h3 { font-weight: 600; }
 :focus-visible { outline: 3px solid var(--purple); outline-offset: 3px; }
 
-/* ---------- Header ---------- */
-.header {
-  height: 174px;
+/* ---------- Header (padronizado com a index) ---------- */
+.btn-menu {
+  display: none;
+  background: none;
+  border: none;
+  font-size: 1.8rem;
+  cursor: pointer;
+  color: #F96412;
+  line-height: 1;
+}
+
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+  width: 100%;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 0 7% 0 9.9%;
-  border-bottom: 6px solid var(--orange);
+  padding: 28px var(--site-padding-x);
+  background-color: var(--branco);
+  border-bottom: 3px solid var(--laranja);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
 }
-.header__logo img { display: block; height: 142px; width: auto; }
-.nav { display: flex; gap: 44px; }
-.nav a { font-size: 22px; color: var(--text); transition: color .2s; }
-.nav a:hover { color: var(--orange); }
+
+.logo_header {
+  margin-left: 50px;
+}
+
+.logo_header img {
+  height: 140px;
+  width: auto;
+  display: block;
+}
+
+nav#menu ul {
+  list-style: none;
+  display: flex;
+  gap: 40px;
+  margin: 0;
+  padding: 0;
+}
+
+nav#menu ul li a {
+  text-decoration: none;
+  color: #444;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 600;
+  font-style: normal;
+  font-size: 1rem;
+  transition: color 0.3s ease;
+}
+
+nav#menu ul li a:hover {
+  color: #F96412;
+}
 
 /* ---------- Layout ---------- */
-.main { padding: 32px var(--side) 90px; }
+.main { padding: 32px var(--side) 90px; margin-top: 199px; /* compensa a altura do header fixo */ }
 .main > section + section { margin-top: 50px; }
 
 h2 { font-family: "Poppins", sans-serif; }
@@ -245,10 +294,50 @@ h2 { font-family: "Poppins", sans-serif; }
     white-space: nowrap;
 }
 
-/* ---------- Rodapé ---------- */
+/* ---------- Rodapé (padronizado com a index) ---------- */
 .footer {
-  min-height: 730px;
+  min-height: 534px;
+  padding: 73px 20px 60px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   background: linear-gradient(180deg, #f9a66f 0%, #fa6516 100%);
+  color: #fff;
+}
+
+.footer__logo img {
+  display: block;
+  height: 246px;
+  width: auto;
+}
+
+.social {
+  display: flex;
+  gap: 14px;
+  margin-top: 26px;
+}
+
+.social a {
+  display: block;
+  width: 47px;
+  height: 47px;
+  transition: transform .2s;
+}
+
+.social a:hover {
+  transform: translateY(-3px);
+}
+
+.social svg {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.copyright {
+  font-size: 20px;
+  text-align: center;
+  margin-top: 30px;
 }
 
 /* ---------- Responsivo ---------- */
@@ -436,16 +525,11 @@ h2 { font-family: "Poppins", sans-serif; }
 }
 }
 @media (max-width: 1200px) {
-  .nav { gap: 24px; }
-  .nav a { font-size: 18px; }
   .stats { gap: 24px; }
   .stat { padding: 24px 28px 32px; }
   .row, .row--bottom { grid-template-columns: 1fr; gap: 32px; }
 }
 @media (max-width: 800px) {
-  .header { height: auto; flex-direction: column; gap: 12px; padding: 12px 20px; }
-  .header__logo img { height: 90px; }
-  .nav { flex-wrap: wrap; justify-content: center; gap: 8px 20px; }
   .welcome { padding: 28px 24px 40px; }
   .welcome h1 { font-size: 36px; }
   .stats { grid-template-columns: 1fr; }
@@ -454,7 +538,6 @@ h2 { font-family: "Poppins", sans-serif; }
   .badge { margin-right: 0; }
   .card__head h2, .certs h2, .highlights h2, .progress h2 { font-size: 24px; }
   .ranking { flex-direction: column; text-align: center; gap: 12px; padding: 20px; }
-  .footer { min-height: 240px; }
 }
 
 @media (max-width: 320px) {
@@ -485,3 +568,375 @@ h2 { font-family: "Poppins", sans-serif; }
   .badge { grid-column: 2; justify-self: start; width: auto; min-width: 110px; height: 21px; padding: 0 10px; margin: 0; font-size: 10px; }
 }
 
+/* ---------- Header responsivo (padronizado com a index) ---------- */
+@media (max-width: 1024px) {
+  :root {
+    --site-padding-x: 40px;
+  }
+}
+
+/* Menu hambúrguer */
+@media (max-width: 768px) {
+  header {
+    padding: 16px var(--site-padding-x);
+    flex-wrap: wrap;
+  }
+
+  .btn-menu {
+    display: block;
+  }
+
+  nav#menu {
+    display: none;
+    width: 100%;
+    margin-top: 12px;
+  }
+
+  nav#menu.aberto {
+    display: block;
+  }
+
+  nav#menu ul {
+    flex-direction: column;
+    gap: 0;
+  }
+
+  nav#menu ul li a {
+    display: block;
+    padding: 14px 0;
+    border-bottom: 1px solid #eee;
+    font-size: 1.1rem;
+  }
+
+  nav#menu ul li:last-child a {
+    border-bottom: none;
+  }
+
+  .main {
+    margin-top: 175px;
+  }
+}
+
+@media (max-width: 767px) {
+  :root {
+    --site-padding-x: 24px;
+  }
+}
+
+@media (max-width: 479px) {
+  :root {
+    --site-padding-x: 16px;
+  }
+}
+
+/* Até 320px */
+@media (max-width: 320px) {
+  header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-sizing: border-box;
+  }
+
+  .logo_header {
+    margin-left: 0;
+    margin-right: 0;
+  }
+
+  .logo_header img {
+    height: 140px;
+    width: auto;
+    display: block;
+  }
+
+  .btn-menu {
+    position: absolute;
+    right: 16px;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+
+  .main {
+    margin-top: 175px;
+  }
+}
+
+/* 321px até 375px */
+@media (min-width: 321px) and (max-width: 375px) {
+  header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-sizing: border-box;
+  }
+
+  .logo_header {
+    margin-left: 0;
+    margin-right: 0;
+  }
+
+  .logo_header img {
+    height: 110px;
+    width: auto;
+    display: block;
+  }
+
+  .btn-menu {
+    position: absolute;
+    right: 16px;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+
+  .main {
+    margin-top: 145px;
+  }
+}
+
+/* 426px até 768px: logo centralizado, botão à direita */
+@media (min-width: 426px) and (max-width: 768px) {
+  header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 18px 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-sizing: border-box;
+  }
+
+  .logo_header {
+    margin-left: 0;
+    margin-right: 0;
+  }
+
+  .logo_header img {
+    height: 120px;
+    width: auto;
+    display: block;
+  }
+
+  .btn-menu {
+    position: absolute;
+    right: 24px;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+}
+
+/* Telas grandes: 1441px até 2560px */
+@media (min-width: 1441px) and (max-width: 2560px) {
+  :root {
+    --site-padding-x: 100px;
+  }
+
+  header {
+    padding: 28px var(--site-padding-x);
+  }
+
+  nav#menu ul {
+    gap: 42px;
+  }
+
+  nav#menu ul li a {
+    font-family: "Lato", sans-serif;
+    font-size: 1.2rem;
+    line-height: 1.4;
+  }
+}
+
+/* ---------- Footer responsivo (padronizado com a index) ---------- */
+@media (max-width: 900px) {
+  .footer {
+    min-height: 0;
+    padding: 48px 20px 40px;
+  }
+
+  .footer__logo img {
+    height: 190px;
+  }
+
+  .copyright {
+    font-size: 16px;
+  }
+}
+
+@media (max-width: 1024px) {
+  .footer {
+    font-family: "Lato", sans-serif;
+  }
+
+  .footer .copyright {
+    font-family: "Lato", sans-serif;
+    font-size: 0.75rem;
+    line-height: 1.4;
+  }
+}
+
+/* Até 320px */
+@media (max-width: 320px) {
+  .footer {
+    font-family: "Lato", sans-serif;
+  }
+
+  .footer .social {
+    gap: 10px;
+  }
+
+  .footer .social a {
+    width: 34px;
+    height: 34px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .footer .social svg {
+    width: 34px;
+    height: 34px;
+  }
+
+  .footer .copyright {
+    font-family: "Lato", sans-serif;
+    font-size: 0.7rem;
+    line-height: 1.4;
+    text-align: center;
+    margin-top: 12px;
+  }
+
+  .footer__logo img {
+    width: 110px;
+    height: auto;
+  }
+}
+
+/* 321px até 375px */
+@media (min-width: 321px) and (max-width: 375px) {
+  .footer {
+    font-family: "Lato", sans-serif;
+  }
+
+  .footer__logo img {
+    width: 110px;
+    height: auto;
+  }
+
+  .footer .social {
+    gap: 10px;
+  }
+
+  .footer .social a {
+    width: 34px;
+    height: 34px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .footer .social svg {
+    width: 34px;
+    height: 34px;
+  }
+
+  .footer .copyright {
+    font-family: "Lato", sans-serif;
+    font-size: 0.7rem;
+    line-height: 1.4;
+    text-align: center;
+    margin-top: 12px;
+  }
+}
+
+/* 426px até 768px */
+@media (min-width: 426px) and (max-width: 768px) {
+  .footer {
+    font-family: "Lato", sans-serif;
+  }
+
+  .footer__logo img {
+    width: 120px;
+    height: auto;
+  }
+
+  .footer .social {
+    gap: 12px;
+  }
+
+  .footer .social a {
+    width: 38px;
+    height: 38px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .footer .social svg {
+    width: 38px;
+    height: 38px;
+  }
+
+  .footer .copyright {
+    font-family: "Lato", sans-serif;
+    font-size: 0.75rem;
+    line-height: 1.4;
+    text-align: center;
+    margin-top: 14px;
+  }
+}
+
+/* 1200px até 1440px */
+@media (min-width: 1200px) and (max-width: 1440px) {
+  .footer {
+    font-family: "Lato", sans-serif;
+  }
+
+  .footer .copyright {
+    font-family: "Lato", sans-serif;
+    font-size: 0.75rem;
+    line-height: 1.4;
+  }
+}
+
+/* Telas grandes: 1441px até 2560px */
+@media (min-width: 1441px) and (max-width: 2560px) {
+  .footer {
+    font-family: "Lato", sans-serif;
+  }
+
+  .footer__logo img {
+    width: 160px;
+    height: auto;
+  }
+
+  .footer .social {
+    gap: 16px;
+  }
+
+  .footer .social a {
+    width: 46px;
+    height: 46px;
+  }
+
+  .footer .social svg {
+    width: 46px;
+    height: 46px;
+  }
+
+  .footer .copyright {
+    font-family: "Lato", sans-serif;
+    font-size: 0.95rem;
+    line-height: 1.5;
+  }
+}

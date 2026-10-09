@@ -1,140 +1,19 @@
+
 /* =========================================================
-   RESET
+   PÁGINA DE CONTATO
+   O menu, o header, o footer, o reset e as variáveis globais
+   são definidos no style_teste.css.
 ========================================================= */
 
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-html {
-    scroll-behavior: smooth;
-}
-
-body {
-    font-family: 'Poppins', sans-serif;
-    background-color: #ffffff;
-    color: #444;
-}
-
-img {
-    max-width: 100%;
-    display: block;
-}
+/* =========================================================
+   ELEMENTOS DE FORMULÁRIO
+========================================================= */
 
 button,
 input,
 textarea {
     font-family: "Lato", sans-serif;
 }
-
-
-/* =========================================================
-   VARIÁVEIS
-========================================================= */
-
-:root {
-    --roxo: #5E2E81;
-    --laranja: #F96412;
-    --cinza: #444;
-    --cinza-claro: #f5f5f5;
-    --branco: #ffffff;
-    --site-padding-x:    60px;
-    --section-padding-y: 80px;
-    --container-max:     1400px;
-}
-
-
-/* =========================================================
-   HEADER
-   Mesmo padrão do menu utilizado na Home
-========================================================= */
-
-header {
-    position: sticky;
-    top: 0;
-    z-index: 1000;
-    width: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 28px var(--site-padding-x);
-    background-color: var(--branco);
-    border-bottom: 3px solid var(--laranja);
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
-}
-
-/* Logo */
-
-.logo_header {
-    display: flex;
-    align-items: center;
-    text-decoration: none;
-}
-
-.logo_header img {
-    width: auto;
-    height: 100px;
-    display: block;
-}
-
-/* =========================================================
-   MENU DESKTOP
-========================================================= */
-
-nav#menu {
-    display: block;
-}
-
-nav#menu ul {
-    list-style: none;
-    display: flex;
-    align-items: center;
-    gap: 40px;
-    margin: 0;
-    padding: 0;
-}
-
-nav#menu ul li {
-    margin: 0;
-    padding: 0;
-}
-
-nav#menu ul li a {
-    display: block;
-    text-decoration: none;
-    color: var(--cinza);
-    font-family: 'Poppins', sans-serif;
-    font-size: 1rem;
-    font-weight: 600;
-    transition: color 0.3s ease;
-}
-
-nav#menu ul li a:hover {
-    color: var(--laranja);
-}
-
-
-/* =========================================================
-   BOTÃO MENU HAMBÚRGUER
-   Escondido no desktop
-========================================================= */
-
-.btn-menu {
-    display: none;
-    background: transparent;
-    border: none;
-    color: var(--laranja);
-    font-family: "Lato", sans-serif;
-    font-weight: 400;
-    font-style: normal;
-    font-size: 1.8rem;
-    line-height: 1;
-    cursor: pointer;
-    padding: 5px;
-}
-
 
 /* =========================================================
    HERO — CONTATO
@@ -144,6 +23,7 @@ nav#menu ul li a:hover {
     position: relative;
     width: 100%;
     height: auto;
+    margin-top: 159px;
     background-image: url("../img_elastitam/bannerContato.png");
     background-size: 100% auto;
     background-position: top center;
@@ -151,9 +31,7 @@ nav#menu ul li a:hover {
     aspect-ratio: 1366 / 497;
     display: flex;
     align-items: center;
-    box-sizing: border-box;
 }
-
 
 /* =========================================================
    SEÇÃO DO FORMULÁRIO
@@ -162,7 +40,7 @@ nav#menu ul li a:hover {
 .formulario_contato {
     width: 100%;
     padding: 80px var(--site-padding-x);
-    background-color: #ffffff;
+    background-color: #fff;
 }
 
 .formulario_conteudo {
@@ -174,7 +52,6 @@ nav#menu ul li a:hover {
     justify-content: space-between;
     gap: 70px;
 }
-
 
 /* =========================================================
    IMAGEM DO FORMULÁRIO
@@ -193,9 +70,7 @@ nav#menu ul li a:hover {
     margin-left: -250px;
     object-fit: cover;
     border-radius: 100px;
-    filter: drop-shadow(
-        0 4px 5px rgba(0, 0, 0, 0.15)
-    );
+    filter: drop-shadow(0 4px 5px rgba(0, 0, 0, 0.15));
 }
 
 /* =========================================================
@@ -212,7 +87,6 @@ nav#menu ul li a:hover {
     width: 100%;
 }
 
-
 /* =========================================================
    CAMPOS
 ========================================================= */
@@ -226,7 +100,7 @@ nav#menu ul li a:hover {
     display: block;
     margin-bottom: 8px;
     color: #444;
-    font-family: 'DM Sans', sans-serif;
+    font-family: "Lato", sans-serif;
     font-size: 0.95rem;
     font-weight: 600;
 }
@@ -238,13 +112,11 @@ nav#menu ul li a:hover {
     border: 1px solid #d8d8d8;
     border-radius: 10px;
     outline: none;
-    background-color: #ffffff;
+    background-color: #fff;
     color: #444;
-    font-family: 'Lato', sans-serif;
+    font-family: "Lato", sans-serif;
     font-size: 1rem;
-    transition:
-        border-color 0.3s ease,
-        box-shadow 0.3s ease;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
 }
 
 .campo input {
@@ -256,19 +128,15 @@ nav#menu ul li a:hover {
     resize: vertical;
 }
 
-
 /* =========================================================
-   FOCO NOS CAMPOS
-   Borda laranja ao clicar
+   FOCO DOS CAMPOS
 ========================================================= */
 
 .campo input:focus,
 .campo textarea:focus {
     border-color: #F96412;
-    box-shadow:
-        0 0 0 3px rgba(249, 100, 18, 0.10);
+    box-shadow: 0 0 0 3px rgba(249, 100, 18, 0.10);
 }
-
 
 /* =========================================================
    CAMPO DE MENSAGEM
@@ -278,9 +146,8 @@ nav#menu ul li a:hover {
     margin-bottom: 25px;
 }
 
-
 /* =========================================================
-   BOTÃO
+   BOTÃO DE ENVIO
 ========================================================= */
 
 .botao_cadastro {
@@ -288,18 +155,16 @@ nav#menu ul li a:hover {
     align-items: center;
     justify-content: center;
     min-width: 190px;
-    padding: 14px 16px;
+    padding: 16px 16px;
     border: none;
     border-radius: 12px;
     background-color: #F96412;
-    color: #ffffff;
-    font-family: 'DM Sans', sans-serif;
+    color: #fff;
+    font-family: "Lato", sans-serif;
     font-size: 0.95rem;
     font-weight: 700;
     cursor: pointer;
-    transition:
-        background-color 0.3s ease,
-        transform 0.3s ease;
+    transition: background-color 0.3s ease, transform 0.3s ease;
 }
 
 .botao_cadastro:hover {
@@ -307,58 +172,50 @@ nav#menu ul li a:hover {
     transform: translateY(-2px);
 }
 
-/* ==================== BENEFÍCIOS ==================== */
+/* =========================================================
+   BENEFÍCIOS
+========================================================= */
 
 .beneficios {
     width: 100%;
+    padding: 70px 30px;
     background-color: #F9F2FF;
-    padding: 70px 0;
 }
 
 .beneficios_conteudo {
     width: 100%;
     max-width: 1000px;
     margin: 0 auto;
-
     display: flex;
     align-items: center;
     justify-content: space-between;
-
     gap: 60px;
 }
 
-/* Cada benefício */
 .beneficio {
     flex: 1;
-
     display: flex;
     align-items: center;
-
     gap: 18px;
 }
 
-/* Círculo do ícone */
+/* Ícone */
+
 .beneficio_icone {
     width: 66px;
     height: 66px;
-
     min-width: 66px;
-
     border: 1.5px solid #5E2E81;
     border-radius: 50%;
-
     display: flex;
     align-items: center;
     justify-content: center;
-
-    background-color: #FFFFFF;
+    background-color: #fff;
 }
 
-/* Ícones SVG */
 .beneficio_icone svg {
     width: 34px;
     height: 34px;
-
     fill: none;
     stroke: #5E2E81;
     stroke-width: 1.8;
@@ -366,81 +223,71 @@ nav#menu ul li a:hover {
     stroke-linejoin: round;
 }
 
-/* Texto de cada benefício */
+/* Texto */
+
 .beneficio_texto {
     display: flex;
     flex-direction: column;
-
     justify-content: center;
 }
 
-/* Título */
 .beneficio_texto h2 {
     margin: 0 0 7px;
-
-    font-family: "DM Sans", sans-serif;
+    font-family: "Lato", sans-serif;
     font-size: 15px;
-    line-height: 1.15;
+    line-height: 1.2;
     font-weight: 700;
-
     color: #FF6400;
 }
 
-/* Descrição */
 .beneficio_texto p {
+    max-width: 190px;
     margin: 0;
-
     font-family: "Lato", sans-serif;
     font-size: 10px;
-    line-height: 1.35;
+    line-height: 1.4;
     font-weight: 400;
-
     color: #3B3B3B;
-
-    max-width: 190px;
 }
 
+/* =========================================================
+   RESPONSIVIDADE — TABLET
+========================================================= */
 
-/* ==================== RESPONSIVIDADE ==================== */
-
-@media (max-width: 900px) {
-
-    .beneficios {
-        padding: 50px 30px;
+@media (max-width: 1024px) {
+    .formulario_conteudo {
+        gap: 50px;
     }
 
-    .beneficios_conteudo {
+    .formulario_imagem img {
+        width: 120%;
+        margin-left: -100px;
+    }
+}
+
+/* =========================================================
+   RESPONSIVIDADE — TABLET E CELULAR
+========================================================= */
+
+@media (max-width: 768px) {
+    .hero_contato {
+        background-size: cover;
+        background-position: center;
+    }
+
+    .formulario_contato {
+        padding: 50px var(--site-padding-x);
+    }
+
+    .formulario_conteudo {
+        flex-direction: column;
         gap: 35px;
     }
 
-    .beneficio {
-        gap: 12px;
+    .formulario_area {
+        width: 100%;
+        max-width: 550px;
     }
-
-    .beneficio_icone {
-        width: 58px;
-        height: 58px;
-        min-width: 58px;
-    }
-
-    .beneficio_icone svg {
-        width: 29px;
-        height: 29px;
-    }
-
-    .beneficio_texto h2 {
-        font-size: 14px;
-    }
-
-    .beneficio_texto p {
-        font-size: 9px;
-    }
-}
-
-
-/* ==================== MOBILE ==================== */
-
-@media (max-width: 700px) {
 
     .beneficios {
         padding: 45px 25px;
@@ -449,12 +296,12 @@ nav#menu ul li a:hover {
     .beneficios_conteudo {
         flex-direction: column;
         align-items: flex-start;
-
         gap: 30px;
     }
 
     .beneficio {
         width: 100%;
+        gap: 18px;
     }
 
     .beneficio_icone {
@@ -478,311 +325,132 @@ nav#menu ul li a:hover {
     }
 }
 
-/* ==========================
-   10. FOOTER
-========================== */
-
-footer {
-  position: relative;
-  background: linear-gradient(10deg, #F96412 30%, #F47A35 60%, #F9A66C 100%);
-  color: #fff;
-  padding: var(--section-padding-y) var(--site-padding-x) 24px;
-  display: grid;
-  grid-template-columns: 2fr 1fr 1fr;
-  grid-template-rows: auto auto;
-  gap: 32px;
-  width: 100%;
-  box-sizing: border-box;
-}
-
-.logofrase_footer {
-  display: flex;
-  flex-direction: column;
-  gap: 12px;
-}
-
-.logo_footer img {
-  width: 120px;
-  object-fit: contain;
-}
-
-.contato_footer,
-.redesociais_footer {
-  display: flex;
-  flex-direction: column;
-  gap: 8px;
-}
-
-.titulo_footer {
-  font-size: 1.1rem;
-  font-weight: 700;
-  color: #fff;
-  margin-bottom: 4px;
-}
-
-.p_footer {
-  font-size: 0.9rem;
-  color: rgba(255, 255, 255, 0.8);
-  line-height: 1.6;
-}
-
-.p_contato {
-  font-size: 0.9rem;
-  color: rgba(255, 255, 255, 0.8);
-}
-
-.icones {
-  display: flex;
-  gap: 16px;
-  align-items: center;
-}
-
-.icones a i {
-  color: #fff !important;
-  transition: opacity 0.3s ease;
-}
-
-.icones a:hover i {
-  opacity: 0.7;
-}
-
-.frase_footer {
-  grid-column: 1 / -1;
-  text-align: center;
-  font-size: 0.85rem;
-  color: rgba(255, 255, 255, 0.6);
-  border-top: 1px solid rgba(255, 255, 255, 0.2);
-  padding-top: 20px;
-  margin-top: 8px;
-}
-
 /* =========================================================
-   RESPONSIVIDADE — TABLET
+   IMAGEM OCULTA EM TELAS MENORES
 ========================================================= */
 
-@media (max-width: 1024px) {
-
-    :root {
-        --site-padding-x: 4%;
-    }
-
-    header {
-        padding: 22px var(--site-padding-x);
-    }
-
-    .logo_header img {
-        height: 85px;
-    }
-
-    nav#menu ul {
-        gap: 25px;
-    }
-
-    nav#menu ul li a {
-        font-size: 0.95rem;
-    }
-
-    .formulario_conteudo {
-        gap: 50px;
-    }
-
-    .formulario_imagem img {
-        width: 120%;
-        margin-left: -100px;
-    }
-}
-
-
-/* =========================================================
-   RESPONSIVIDADE — MOBILE
-========================================================= */
-
-@media (max-width: 768px) {
-
-    :root {
-        --site-padding-x: 20px;
-    }
-
-
-    /* -----------------------------------------------------
-       HEADER MOBILE
-    ----------------------------------------------------- */
-
-    header {
-        padding: 16px var(--site-padding-x);
-
-        flex-wrap: wrap;
-    }
-
-    .logo_header img {
-        height: 70px;
-    }
-
-
-    /* Botão hambúrguer aparece */
-
-    .btn-menu {
-        display: block;
-    }
-
-
-    /* -----------------------------------------------------
-       MENU MOBILE
-    ----------------------------------------------------- */
-
-    nav#menu {
-        display: none;
-
-        width: 100%;
-
-        margin-top: 12px;
-    }
-
-    nav#menu.aberto {
-        display: block;
-    }
-
-    nav#menu ul {
-        width: 100%;
-
-        display: flex;
-        flex-direction: column;
-        align-items: stretch;
-
-        gap: 0;
-    }
-
-    nav#menu ul li {
-        width: 100%;
-    }
-
-    nav#menu ul li a {
-        width: 100%;
-
-        display: block;
-
-        padding: 14px 0;
-
-        border-bottom: 1px solid #eee;
-
-        color: var(--cinza);
-
-        font-size: 1.1rem;
-    }
-
-    nav#menu ul li:last-child a {
-        border-bottom: none;
-    }
-
-    nav#menu ul li a:hover {
-        color: var(--laranja);
-    }
-
-
-    /* -----------------------------------------------------
-       HERO MOBILE
-    ----------------------------------------------------- */
-
-    .hero_contato {
-        width: 100%;
-
-        aspect-ratio: 1366 / 497;
-
-        background-size: cover;
-        background-position: center;
-    }
-
-
-    /* -----------------------------------------------------
-       FORMULÁRIO MOBILE
-    ----------------------------------------------------- */
-
-    .contato_formulario {
-        padding: 50px var(--site-padding-x);
-    }
-
-    .formulario_conteudo {
-        flex-direction: column;
-
-        gap: 50px;
-    }
-
-
-    /* Imagem volta para o tamanho da tela */
-
-    .formulario_imagem {
-        width: 100%;
-    }
-
-    .formulario_imagem img {
-        width: 100%;
-        max-width: 100%;
-
-        margin-left: 0;
-
-        border-radius: 70px;
-    }
-
-    .formulario {
-        width: 100%;
-    }
-
-    .formulario h2 {
-        font-size: 1.7rem;
-
-        margin-bottom: 25px;
-    }
-}
-
-
-/* =========================================================
-   MOBILE PEQUENO
-========================================================= */
-
-@media (max-width: 480px) {
-
-    header {
-        padding: 14px 18px;
-    }
-
-    .logo_header img {
-        height: 60px;
-    }
-
-    .btn-menu {
-        font-size: 1.7rem;
-    }
-
-    .hero_contato {
-        aspect-ratio: 1366 / 497;
-
-        background-size: cover;
-        background-position: center;
-    }
-
-    .contato_formulario {
-        padding: 40px 18px;
-    }
-
-    .formulario_imagem img {
-        border-radius: 50px;
-    }
-
-    .formulario h2 {
-        font-size: 1.5rem;
-    }
-
-    .formulario_grupo input,
-    .formulario_grupo textarea {
-        padding: 12px 14px;
-    }
-
-    .btn_enviar {
-        width: 100%;
-    }
-}
 @media (max-width: 1023px) {
     .formulario_imagem {
         display: none;
     }
+}
+
+/* =========================================================
+   CELULARES PEQUENOS
+========================================================= */
+
+@media (max-width: 480px) {
+    .hero_contato {
+        background-size: cover;
+        background-position: center;
+    }
+
+    .formulario_contato {
+        padding: 40px 18px;
+    }
+
+    .formulario_conteudo {
+        gap: 30px;
+    }
+
+    .campo {
+        margin-bottom: 18px;
+    }
+
+    .campo input,
+    .campo textarea {
+        padding: 12px 14px;
+    }
+
+    .campo input {
+        height: 46px;
+    }
+
+    .campo textarea {
+        min-height: 120px;
+    }
+
+    .botao_cadastro {
+        width: 100%;
+    }
+
+    .beneficios {
+        padding: 40px 18px;
+    }
+
+    .beneficios_conteudo {
+        gap: 25px;
+    }
+
+    .beneficio {
+        gap: 14px;
+    }
+
+    .beneficio_icone {
+        width: 54px;
+        height: 54px;
+        min-width: 54px;
+    }
+
+    .beneficio_icone svg {
+        width: 27px;
+        height: 27px;
+    }
+
+    .beneficio_texto h2 {
+        font-size: 14px;
+    }
+
+    .beneficio_texto p {
+        font-size: 10px;
+    }
+}
+
+/* =========================================================
+   TELAS MUITO PEQUENAS
+========================================================= */
+
+@media (max-width: 320px) {
+    .hero_contato {
+        margin-top: 175px;
+    }
+
+    .formulario_contato {
+        padding: 35px 16px;
+    }
+
+    .beneficios {
+        padding: 35px 16px;
+    }
+
+    .beneficio {
+        gap: 12px;
+    }
+
+    .beneficio_icone {
+        width: 48px;
+        height: 48px;
+        min-width: 48px;
+    }
+
+    .beneficio_icone svg {
+        width: 24px;
+        height: 24px;
+    }
+}
+
+@media (max-width: 768px) {
+  :root {
+    --header-h: 145px;   /* 110px logo + 32px padding + 3px borda */
+  }
+
+  html {
+    scroll-padding-top: var(--header-h);
+  }
+
+  .hero,
+  .hero_contato,
+  .signup {
+    margin-top: var(--header-h);
+  }
 }

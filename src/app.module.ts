@@ -24,7 +24,7 @@ import { RecuperacaoSenhaModule } from './recuperacao-senha/recuperacao-senha.mo
         host: configService.get<string>('DB_HOST'),
         port: configService.get<number>('DB_PORT'),
         username: configService.get<string>('DB_USERNAME'),
-        password: configService.get<string>('DB_PASSWORD'),
+        password: configService.get<string>('DB_PASS'),
         database: configService.get<string>('DB_DATABASE'),
         autoLoadEntities: true,
         synchronize: false,

@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,30 +8,36 @@
     <link rel="icon" type="image/png" href="img_elastitam/logoElasTitam.png">
 
     <!-- FOLHA DE ESTILOS DA PÁGINA DE CONTATO -->
-    <link rel="stylesheet" href="css/stylecontato.css">
+    <link rel="stylesheet" href="css/style_teste.css">
+    <!-- <link rel="stylesheet" href="css/stylecontato.css"> -->
 
     <!-- ÍCONES FONT AWESOME — usados nos ícones de e-mail, instagram e whatsapp -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css">
 
-    <!-- PRÉ-CONEXÃO COM O GOOGLE FONTS — melhora a velocidade de carregamento das fontes -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <<!--FONTE POPPINS DO GOOGLE-->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link
+            href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+            rel="stylesheet">
+        <!--FONTE LATO DO GOOGLE -->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link
+            href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap"
+            rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap"
+            rel="stylesheet">
 
-    <!-- FONTE DM SANS — usada nos títulos, labels e botões -->
-    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Roboto:ital,wght@0,100..900;1,100..900&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap" rel="stylesheet">
 
-    <!-- FONTE LATO — usada nos inputs e textos do formulário -->
-    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Roboto:ital,wght@0,100..900;1,100..900&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap" rel="stylesheet">
-
-    <!-- ÍCONE DA ABA DO NAVEGADOR (favicon) -->
-    <link rel="icon" type="image/png" href="img/logoelastitam_transparent.png">
+        <!-- ÍCONE DA ABA DO NAVEGADOR (favicon) -->
+        <link rel="icon" type="image/png" href="img/logoelastitam_transparent.png">
 </head>
 
 <body>
     <!-- HEADER -->
     <header>
-        <!--imagem-->
-        <a href="" class="logo_header">
+        <a href="index.html" class="logo_header">
             <img src="img_elastitam/logoElasTitam.png" alt="logo elas titam">
         </a>
 
@@ -38,13 +45,13 @@
 
         <nav id="menu">
             <ul>
-                <li><a href="#home">Home</a></li>
-                <li><a href="#sobre">Sobre</a></li>
-                <li><a href="#atividades">Atividades</a></li>
-                <li><a href="#noticias">Notícias</a></li>
-                <li><a href="#comunidade">Comunidade</a></li>
+                <li><a href="index.html#home">Home</a></li>
+                <li><a href="index.html#sobre">Sobre</a></li>
+                <li><a href="index.html#atividades">Atividades</a></li>
+                <li><a href="noticias.html">Notícias</a></li>
+                <li><a href="index.html#comunidade">Comunidade</a></li>
                 <li><a href="contato.html">Contato</a></li>
-                <li><a href="homenot.html">Relatório</a></li>
+                <li><a href="cadastro.html">Cadastro</a></li>
             </ul>
         </nav>
     </header>
@@ -65,7 +72,8 @@
 
                 <div class="formulario_imagem">
 
-                    <img src="img_elastitam/backgroundimage_formContato (1).png" alt="Participantes em uma atividade do Elas Titam">
+                    <img src="img_elastitam/backgroundimage_formContato (1).png"
+                        alt="Participantes em uma atividade do Elas Titam">
 
                 </div>
 
@@ -79,13 +87,7 @@
                                 Nome Completo
                             </label>
 
-                            <input
-                                type="text"
-                                id="nome"
-                                name="nome"
-                                autocomplete="name"
-                                required
-                            >
+                            <input type="text" id="nome" name="nome" autocomplete="name" required>
 
                         </div>
 
@@ -96,13 +98,7 @@
                                 E-mail
                             </label>
 
-                            <input
-                                type="email"
-                                id="email"
-                                name="email"
-                                autocomplete="email"
-                                required
-                            >
+                            <input type="email" id="email" name="email" autocomplete="email" required>
 
                         </div>
 
@@ -113,11 +109,7 @@
                                 Curso / Área de interesse
                             </label>
 
-                            <input
-                                type="text"
-                                id="curso"
-                                name="curso"
-                            >
+                            <input type="text" id="curso" name="curso">
 
                         </div>
 
@@ -128,17 +120,13 @@
                                 Mensagem
                             </label>
 
-                            <textarea
-                                id="mensagem"
-                                name="mensagem"
-                                rows="5"
-                            ></textarea>
+                            <textarea id="mensagem" name="mensagem" rows="5"></textarea>
 
                         </div>
 
 
                         <button type="submit" class="botao_cadastro">
-                            CRIAR MINHA CONTA
+                            Criar minha conta
                         </button>
 
                     </form>
@@ -222,7 +210,9 @@
                     <div class="beneficio_icone" aria-hidden="true">
 
                         <svg viewBox="0 0 24 24">
-                            <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78L12 21.23l8.84-8.84a5.5 5.5 0 0 0 0-7.78Z"></path>
+                            <path
+                                d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78L12 21.23l8.84-8.84a5.5 5.5 0 0 0 0-7.78Z">
+                            </path>
                         </svg>
 
                     </div>
@@ -252,26 +242,37 @@
         <!-- ==================== ÁREA FINAL ==================== -->
 
         <footer class="footer">
-        <a href="#" class="footer__logo"><img src="img_elastitam/LogoRoxo_Elas Titam.png" alt="ElasTitam – Girls in tech"></a>
-        <div class="social">
-        <a href="#" aria-label="Instagram do ElasTitam">
-            <svg viewBox="0 0 48 48" aria-hidden="true"><rect width="48" height="48" rx="12" fill="#fff"/><circle cx="24" cy="25" r="10" fill="none" stroke="#fa6516" stroke-width="5"/><circle cx="37" cy="11" r="3.2" fill="#fa6516"/></svg>
-        </a>
-        <a href="#" aria-label="YouTube do ElasTitam">
-            <svg viewBox="0 0 48 48" aria-hidden="true"><rect y="5" width="48" height="38" rx="11" fill="#fff"/><path d="M19 15l15 9-15 9z" fill="#fa6516"/></svg>
-        </a>
-        </div>
-        <p class="copyright">© 2026 ElasTitam - Girls in Tech. Todos os direitos reservados.</p>
-    </footer>
-
-            <p class="frase_footer">© 2025 ElasTitam - Girls in Tech. Todos os direitos reservados.</p>
+            <a href="#" class="footer__logo"><img src="img_elastitam/LogoRoxo_Elas Titam.png"
+                    alt="ElasTitam – Girls in tech"></a>
+            <div class="social">
+                <a href="https://www.instagram.com/elastitam?utm_source=ig_web_button_share_sheet&mdxt=ZDNlZDc0MzIxNw=="
+                    aria-label="Instagram do ElasTitam">
+                    <svg viewBox="0 0 48 48" aria-hidden="true">
+                        <rect width="48" height="48" rx="12" fill="#fff" />
+                        <circle cx="24" cy="25" r="10" fill="none" stroke="#fa6516" stroke-width="5" />
+                        <circle cx="37" cy="11" r="3.2" fill="#fa6516" /></svg>
+                </a>
+                <a href="https://www.youtube.com/@ElasTitam" aria-label="YouTube do ElasTitam">
+                    <svg viewBox="0 0 48 48" aria-hidden="true">
+                        <rect y="5" width="48" height="38" rx="11" fill="#fff" />
+                        <path d="M19 15l15 9-15 9z" fill="#fa6516" /></svg>
+                </a>
+            </div>
+            <p class="copyright">© 2026 ElasTitam - Girls in Tech. Todos os direitos reservados.</p>
         </footer>
 
     </main>
 
+    <!-- jQuery (obrigatório para o Slick) -->
+    <!-- jQuery (obrigatório para o Slick) -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+    <!-- Slick JS -->
+    <script src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+
     <!-- Seu arquivo JS -->
     <script src="js/script.js"></script>
-    
+
 </body>
 
 </html>
