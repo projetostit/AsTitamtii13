@@ -3,9 +3,6 @@ import { Module } from '@nestjs/common';
 import { ConfigModule } from '@nestjs/config';
 import { ServeStaticModule } from '@nestjs/serve-static';
 import { join } from 'path';
-
-import { AppController } from './app.controller';
-import { AppService } from './app.service';
 import { DatabaseModule } from './database/database.module';
 import { UsuarioModule } from './usuario/usuario.module';
 import { AutenticacaoModule } from './autenticacao/autenticacao.module';
@@ -32,7 +29,7 @@ import { RecuperacaoSenhaModule } from './recuperacao-senha/recuperacao-senha.mo
     RecuperacaoSenhaModule,
   ],
 
-  controllers: [AppController],
-  providers: [AppService],
+  controllers: [],
+  providers: [],
 })
 export class AppModule {}
