@@ -11,6 +11,8 @@ import { AutenticacaoModule } from './autenticacao/autenticacao.module';
 import { NewsletterModule } from './newsletter/newsletter.module';
 import { ContatoModule } from './contato/contato.module';
 import { RecuperacaoSenhaModule } from './recuperacao-senha/recuperacao-senha.module';
+import { ServeStaticModule } from '@nestjs/serve-static';
+import { join } from 'path';
 
 @Module({
   imports: [
@@ -19,15 +21,20 @@ import { RecuperacaoSenhaModule } from './recuperacao-senha/recuperacao-senha.mo
       envFilePath: '.env',
     }),
 
+    ServeStaticModule.forRoot({
+      rootPath: join(__dirname, '..', 'public'),
+    }),
+
     DatabaseModule,
     UsuarioModule,
     AutenticacaoModule,
     NewsletterModule,
     ContatoModule,
     RecuperacaoSenhaModule,
+
   ],
 
   controllers: [AppController],
   providers: [AppService],
 })
-export class AppModule {}
+export class AppModule { }
